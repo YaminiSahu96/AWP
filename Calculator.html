@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+    <script>
+        function dis(val) {
+            document.getElementById("result").value += val;
+        }
+        function disop(val) {
+            var eq = document.getElementById("result").value;
+            console.log("eq" + eq);
+            var lc = eq.charAt(eq.length - 1);
+            console.log("lc" + lc);
+            if (lc == "+" || lc == "-" || lc == "*" || lc == "/" || lc=="%") {
+                console.log("inside" + lc);
+                document.getElementById("result").value = eq.substring(0, eq.length - 1);
+            }
+
+            document.getElementById("result").value += val;
+
+
+        }
+        function solve() {
+            var x = document.getElementById("result").value;
+            console.log(x);
+            var y = eval(x);
+            document.getElementById("result").value = y;
+        }
+        function backspace() {
+            var x = document.getElementById("result").value;
+            document.getElementById("result").value = x.substring(0, x.length - 1);
+        }
+        function clr() {
+            document.getElementById("result").value = "";
+        }
+    </script>
+    <style>
+        input[type="button"] {
+            width: 100%;
+            background-color: white;
+            color: black;
+            border: solid black 1px;
+        }
+
+        input[type="text"] {
+            width: 300px;
+            height: 150px;
+            background-color: white;
+            border: solid black 1px;
+            font-size: 15px;
+            }
+    </style>
+</head>
+
+<body>
+    <div class=title><strong>Calculator</strong></div> 
+    <!--create table-->
+    <table border="1px">
+        <tr>
+            <td colspan="4"><input type="text" id="result" /></td>
+
+        </tr>
+        <tr>
+            <td><input type="button" value="C" onclick="clr()" /></td>
+            <td><input type="button" value="b" onclick="backspace()" /></td>
+            <td><input type="button" value="/" onclick="disop('/')" /></td>
+            <td><input type="button" value="*" onclick="disop('*')" /></td>
+
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="dis('7')" /></td>
+            <td><input type="button" value="8" onclick="dis('8')" /></td>
+            <td><input type="button" value="9" onclick="dis('9')" /></td>
+            <td><input type="button" value="-" onclick="disop('-')" /></td>
+
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="dis('4')" /></td>
+            <td><input type="button" value="5" onclick="dis('5')" /></td>
+            <td><input type="button" value="6" onclick="dis('6')" /></td>
+            <td><input type="button" value="+" onclick="disop('+')" /></td>
+
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="dis('1')" /></td>
+            <td><input type="button" value="2" onclick="dis('2')" /></td>
+            <td><input type="button" value="3" onclick="dis('3')" /></td>
+            <td rowspan="2"><input type="button" style="height: 40px;background-color: orangered;" value="="
+                    onclick="solve()" /></td>
+
+
+        </tr>
+        <tr>
+            <td><input type="button" value="%" onclick="disop('%')" /></td>
+            <td><input type="button" value="0" onclick="dis('0')" /></td>
+            <td><input type="button" value="." onclick="dis('.')" /></td>
+
+        </tr>
+    </table>
+</body>
+
+</html>
