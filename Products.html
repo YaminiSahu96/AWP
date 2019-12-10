@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script>
+            var obj=[
+                {
+                    "Itemname":"Shoe",
+                    "Price":2500,
+                    "Category":"Personal"
+                },
+                {
+                    "Itemname":"T-shirt",
+                    "Price":1500,
+                    "Category":"Garments"
+                },
+                {
+                    "Itemname":"Book-ignited minds",
+                    "Price":300,
+                    "Category":"Stationary"
+                }
+                ];
+                function dataAvailable()
+                {
+                    var contents="<table class='table' align='center' >";
+                    for(i=0;i<obj.length;i++)
+                    {
+                        var myobj=obj[i];
+                        var row="<tr>"+ "<td>" + myobj.Itemname +"</td>"
+                                        + "<td>" + myobj.Price +"</td>"
+                                        +"<td>"+ myobj.Category + "</td>"
+                                        +"</tr>"
+                        contents+=row;
+                    }
+                    contents +="</table>";
+                    document.getElementById("output").innerHTML=contents;
+                }
+        </script>
+        <style>
+            table{
+                border:1px;
+                align-content:'center' ;
+            }
+            .table tr:nth-child(even){
+                background-color: blue;
+            }
+            .table tr:nth-child(odd){
+                background-color:pink;
+            }
+
+        </style>
+
+    </head>
+    <body style = "text-align:center;">
+            <button onclick="dataAvailable()" style="background-color: aqua;">Add to tables</button>
+            <div id="output" >
+
+            </div>
+
+    </body>
+</html>
