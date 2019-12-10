@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Students Details</title>
+        <script >
+            var myobj=[{
+                "PRN":1,
+                "NAME":"Amit",
+                "MARKS":["DBMS-20","AWP-45","OS-46"],
+                "CONTACT":"9826644321",
+                "PERCENT":66
+            },
+            {
+                "PRN":2,
+                "NAME":"Rohan",
+                "MARKS":["DBMS-20","AWP-10","OS-15"],
+                "CONTACT":["9826632455","21423454"],
+                "PERCENT":15
+            },
+            {
+                "PRN":3,
+                "NAME":"karan",
+                "MARKS":["DBMS-20","AWP-45","OS-46"],
+                "CONTACT":["9826644321","124355223"],
+                "PERCENT":56
+            }
+            ];
+            function downloadJSON()
+           {
+            
+            var jsonarray=myobj;
+                    var contents="<table border='1' align='center'>  ";
+                    for(i=0;i<jsonarray.length;i++)
+                    {
+                        var obj=jsonarray[i];
+                        var row="<tr>"+ "<td>" + obj.PRN +"</td>"
+                                        + "<td>" + obj.NAME +"</td>"
+                                        +"<td>"+ obj.MARKS + "</td>"
+                                        +"<td>"+ obj.CONTACT + "</td>"
+                                        +"<td>"+ obj.PERCENT + "</td>"
+                        +"</tr>"
+                        contents+=row;
+                    }
+                    contents +="</table>";
+                    document.getElementById("output").innerHTML=contents;
+            }
+           
+        </script>
+    </head>
+    <body style = "text-align:center;">
+        <p><b>STUDENT DETAILS</b></p>
+        <button onclick="downloadJSON()"> click here</button>
+        <div style="align-content: center;"    id="output"></div>
+
+        </body>
+</html>
