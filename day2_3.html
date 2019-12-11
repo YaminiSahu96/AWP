@@ -1,5 +1,6 @@
 <html>
     <head>
+        
         <script>
             function dataAvailable()
             {
@@ -8,12 +9,12 @@
                  {
                    // alert("hello3");
                     var jsonarray=JSON.parse(this.responseText);
-                    var contents="<table  class='table'><thead><tr class='sticky'> <th style='width:20px'>USER_ID</th> <th style='width:20px'>ID</th> <th style='width:80px'>TITLE</th> <th style='width:600px'>BODY</th> </tr></thead><tbody style='margin-top:10px !important'>";
+                    var contents="<table  class='table'><thead><tr class='sticky'> <th>USER_ID</th> <th >ID</th> <th >TITLE</th> <th >BODY</th> </tr></thead><tbody style='margin-top:10px !important'>";
                     for(i=0;i<jsonarray.length;i++)
                     {
                         var obj=jsonarray[i];
-                        var row="<tr>"+ "<td style='width:8%'>" + obj.userId +"</td>"
-                                        + "<td style='width:5%'>" + obj.id +"</td>"
+                        var row="<tr>"+ "<td>" + obj.userId +"</td>"
+                                        + "<td>" + obj.id +"</td>"
                                         +"<td>"+ obj.title + "</td>"
                                         +"<td>"+ obj.body + "</td></tr>";
                         
@@ -49,19 +50,27 @@
             
             
             thead{
+                display: block;
                 margin: 0;
                 background: black;
                 color: #fff;    
-                position: fixed;
+                
                 width: 100%;
             }
             tbody{
+                display: block;
                 top:10;
+                overflow: auto;
+                height:800px;
+                width: 100%;
+                
             }
-
+            th, td{
+                width:300px;
+                text-align: left;
+            }
             
-            
-        </style>
+            </style>
     </head>
     <body>
         <button onclick="downloadJSON()">Download</button><br>
