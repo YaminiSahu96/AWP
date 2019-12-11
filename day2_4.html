@@ -1,0 +1,77 @@
+<html>
+    <head>
+            <script>  
+                var slide_index = 2;  
+                displaySlides(slide_index);  
+                function nextSlide(n) {  
+                    displaySlides(slide_index=slide_index + n);  
+                }  
+                function currentSlide(n) {  
+                    displaySlides(slide_index = n);  
+                }  
+                function displaySlides(n) 
+                {  
+                    var i;  
+                    var slides = document.getElementsByClassName("showSlide");  
+                    if (n > slides.length)
+                    { 
+                         slide_index = 1;
+                    }  
+                    if (n < 1) 
+                    { 
+                        slide_index = slides.length;
+                    }  
+                    for (i = 0; i < slides.length; i++)
+                    {  
+                        slides[i].style.display = "none";  
+                    }  
+                    slides[slide_index - 1].style.display = "block";  
+                }  
+        </script>  
+        <style>
+            .left{
+                border: 2;
+            }
+           
+            .slideShow_container{
+               width:50%;
+               height: 50%;
+                margin: auto;
+                position: relative;
+            }
+            .showSlide{
+                    display: inline;
+                    width:50%;
+                    height: 50%;
+            }
+            img{
+                width:80%;
+               height: 80%;
+            }
+        </style>
+         
+    </head>
+    <body onload="displaySlides()">  
+            <div class="slideShow_container">  
+                <div class="showSlide" >  
+                    <img src="1.jpg" />  
+                </div>  
+                <div class="showSlide">  
+                    <img src="2.jpg"/>  
+                </div>  
+          
+                <div class="showSlide">  
+                    <img src="3.jpg"/>  
+                </div>  
+                <div class="showSlide">  
+                    <img src="4.jpg"/>    
+                </div> 
+                <div class="showSlide">  
+                        <img src="5.jpg"/>      
+                    </div>  
+                
+                <button class="left" onclick="nextSlide(-1)"><b>Prev</b></button>  
+                <button class="right" onclick="nextSlide(1)"><b>Next</b></button>  
+            </div>  
+        </body> 
+</html>
