@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script>
+            function dataAvailable()
+            {
+               // alert("hello2");
+                 if(this.readyState==4 && this.status==200)
+                 {
+                   // alert("hello3");
+                    var jsonarray=JSON.parse(this.responseText);
+                    var contents="<table  class='table'><thead><tr class='sticky'> <th style='width:20px'>USER_ID</th> <th style='width:20px'>ID</th> <th style='width:80px'>TITLE</th> <th style='width:600px'>BODY</th> </tr></thead><tbody style='margin-top:10px !important'>";
+                    for(i=0;i<jsonarray.length;i++)
+                    {
+                        var obj=jsonarray[i];
+                        var row="<tr>"+ "<td style='width:8%'>" + obj.userId +"</td>"
+                                        + "<td style='width:5%'>" + obj.id +"</td>"
+                                        +"<td>"+ obj.title + "</td>"
+                                        +"<td>"+ obj.body + "</td></tr>";
+                        
+                        contents=contents+row;
+                    }
+                    contents =contents+"</tbody></table>";
+                    document.getElementById("output").innerHTML=contents;
+            }
+            }
+            function downloadJSON()
+            {
+                //alert("hello");
+                var jsonURL="https://jsonplaceholder.typicode.com/posts";
+                var httpReq = new XMLHttpRequest();
+                httpReq.onreadystatechange = dataAvailable;
+                httpReq.open("GET",jsonURL,true);
+                httpReq.send();
+            }
+        </script>
+        <style>
+            .sticky{
+                top:5;
+                overflow:scroll;
+                position: sticky; 
+                color: red;
+                background-color: black;
+            }
+            table{
+                 margin: 10px;;
+                table-layout: fixed;   
+                border-collapse: collapse;            
+            }
+            
+            
+            thead{
+                margin: 0;
+                background: black;
+                color: #fff;    
+                position: fixed;
+                width: 100%;
+            }
+            tbody{
+                top:10;
+            }
+
+            
+            
+        </style>
+    </head>
+    <body>
+        <button onclick="downloadJSON()">Download</button><br>
+        <div style="margin-top:3%" id="output">
+
+        </div>
+    </body>
+</html>
