@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <script>
+       //To validate name and email and age
+       function validate()
+       {
+       
+        var name=document.getElementById("n").value;
+        var email=document.getElementById("e").value;
+        var age=document.getElementById("a").value;
+        //name should be betwn 5 to 20 character
+        if(name.length < 5 && name.length > 20)
+        {
+            document.write("name lngth should be 5 to 20");
+            console.log("in if");
+        }
+        //email must contain @
+        var flag=0;
+         for(i=0;i<=email.length;i++)
+            {
+                console.log(email);
+                console.log(email[i])
+                
+                if(email[i]=='@')
+                {
+                    
+                    flag=1;
+                    
+                }
+               
+            }
+            if(flag==0)
+                {
+                    console.log("EAMIL SHOULD CONTAIN @");
+                    document.write("EAMIL SHOULD CONTAIN @");
+                }
+       }
+       if(age<18)
+       {
+           document.write("age should be =>18");
+       }
+   </script>
+
+
+</head>
+
+<body>
+    <div align="center"
+        style="float:left;width: 40%;height: 100%;margin-left: 25%;margin-right: 35%;background-color: aqua;padding: 20px;border:1px solid black;overflow: hidden;">
+
+        <h1 align-contents="center"><b>Survey Form</b></h1>
+        <p align-contents="center">Let us know how we can improve freeCodeCamp</p>
+        <table>
+            <tr>
+                <td>*Name:</td>
+                <td><input  id="n" type="text" value="Enter your name" /><br></td>
+            </tr>
+            <tr>
+                <td>*Email:</td>
+                <td><input id="e" type="text" value="Enter your Email" /><br></td>
+            </tr>
+            <tr>
+                <td>*Age:</td>
+                <td><input id="a" type="text" value="Age" /><br></td>
+            </tr>
+
+            <tr>
+                <td>Which option best describe your current role?:</td>
+                <td><select>
+                        <option value="Student">Student</option>
+                        <option value="Teacher">Teacher</option>
+                        <option value="Manager">Manager</option>
+                        <option value="HR">HR</option>
+                    </select><br></td>
+            </tr>
+
+            <tr>
+                <td>*How likely is that you will recommend freeCodeCamp to a friend?:</td>
+                <td><input type="radio" value="Definitely" name="r1" />Definitely<br>
+                    <input type="radio" value="Maybe" name="r1" />Maybe<br>
+                    <input type="radio" value="Not Sure" name="r1" />Not Sure<br></td>
+            </tr>
+            <tr>
+                <td>What do you like most in FCC:</td>
+                <td><select>
+                        <option value="Select an option">Select an option</option>
+                        <option value="Environment">Environment</option>
+                        <option value="Ambience">Ambience</option>
+                    </select><br></td>
+            </tr>
+
+            <tr>
+                <td>Things that should be improved in the future(Check all that apply):</td>
+                <td><input type="checkbox" value="Front-end Projects" />Front-end Projects<br>
+                    <input type="checkbox" value="Back-end Projects" />Back-end Projects<br>
+                    <input type="checkbox" value="Data Visualization" />Data Visualization<br></td>
+            </tr>
+        </table>
+        <input type="button" value="Submit" onclick="validate()"/>
+        <div id="msg">
+
+        </div>
+    </div>
+</body>
+
+</html>
