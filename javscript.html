@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script>
+        function add() {
+            var first = parseInt(document.getElementById("1").value);
+            var second = parseInt(document.getElementById("2").value);
+            var add = first + second;
+            document.write(add);
+        }
+        function evenOdd() {
+            var contents = "<table><tr><td>even</td>";
+            for (i = 2; i <= 100; i = i + 2) {
+                contents = contents + "<td>" + i + "</td>";
+            }
+            contents = contents + "</tr><tr><td>odd</td>";
+            for (i = 1; i <= 100; i = i + 2) {
+                contents = contents + "<td >" + i + "</td>";
+            }
+            contents = contents + "</tr></table>";
+            console.log(contents);
+            document.getElementById("evenodd1").innerHTML = contents;
+        }
+        function evenOdd1() {
+            // alert("hello world");
+            var m = parseInt(document.getElementById("m").value);
+            var n = parseInt(document.getElementById("n").value);
+
+            for (i = m; i <= n; i++) {
+                if (i % 2 == 0) {
+                    document.getElementById("even").innerHTML += i + "  ";
+                    console.log(i);
+                    i++;
+                }
+                document.getElementById("odd").innerHTML += i + "  ";
+                console.log(i);
+            }
+        }
+
+    </script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- <h1>Addition</h1>
+            <input id="1" type="number" placeholder="Enter First Number"/>
+            <hr>
+            <input id="2" type="number" placeholder="Enter Second Number"/>
+            <hr>
+            <button onclick="add()">Add</button>
+            <hr>
+            <button id="evenodd" onclick="evenOdd()" >Even Odd</button>
+            <div id="evenodd1">
+
+            </div> -->
+    <hr>
+    <input id="m" type="number" placeholder="enter number to start the series" />
+    <input id="n" type="number" placeholder="enter number to end the series" />
+    <button id="evenodd1" onclick="evenOdd1()">Even_Odd1</button>
+    <div id="even">
+        Even
+    </div>
+    <div id="odd">
+        Odd
+    </div>
+</body>
+
+</html>
