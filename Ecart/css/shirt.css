@@ -1,0 +1,28 @@
+.col-sm{
+    padding-top: 20px;
+    height: 600px;
+    border: 1px solid black;
+
+}
+.row{
+    border: 3px solid blue;
+}
+.container-fluid{
+    height:1000px;
+}
+img{
+    height: 300px;
+    width:300px;
+    border:5px solid indigo;
+}
+img1{
+    height:100px;
+    width:100px;
+    border:5px bolder indigo;
+}
+#price{
+    float: right;
+}
+#name{
+    padding: 25px;
+}

@@ -1,0 +1,30 @@
+.container{
+    background-color: white;
+}
+.col-sm{
+    border: 1px  black solid; 
+}
+.row{
+    border: 1px  black solid; 
+}
+body{
+    background-color:whitesmoke;
+}
+.col-sm:hover{
+        background-color:aqua;
+}
+.container-fluid{
+    height: 1000px;
+}
+iframe{
+    height: 100%;
+    width: 100%;
+    background-color:white;
+}
+h1{
+    color: blue;
+}
+a{
+    height: 100%;
+    width: 100%;
+}
